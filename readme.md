@@ -1,10 +1,10 @@
 ---
-source-git-commit: b6d87541dfa32a535e1256ce4805bcc1d4991a49
+source-git-commit: 6a69fa445f03deedac6a616a04a2ffe4258fffd3
 workflow-type: tm+mt
-source-wordcount: '15'
+source-wordcount: '16'
 ht-degree: 0%
 
 ---
-# Documentación de Adobe Managed Services Synoptryx
+# Documentación de Adobe Managed Services Observability Insights
 
-Este es el repositorio de la documentación de Adobe Managed Services Synoptryx.
+Este es el repositorio de la documentación de Adobe Managed Services Observability.
