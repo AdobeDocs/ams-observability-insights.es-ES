@@ -3,9 +3,9 @@ title: Monitorice su entorno Managed Services de AEM con Observability Insights
 description: Empiece aquí para comprender qué cubre Observability Insights en AEM Managed Services, para quién sirve y cómo navegar por el resto de esta guía.
 feature: Operations
 role: Admin
-source-git-commit: 94ba857f5b6a5c33483e4d49f5a1daa9583b6347
+source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Monitorice su entorno Managed Services de AEM con Observability Insights {#observability-insights-monitoring}
 
-Observability Insights proporciona visibilidad sobre el rendimiento de la aplicación, el estado de la infraestructura y el comportamiento del servicio en Adobe Experience Manager Managed Services, sin requerir una plataforma de monitorización independiente.
+**Observability Insights** proporciona visibilidad sobre el rendimiento de la aplicación, el estado de la infraestructura y el comportamiento del servicio en AEM Managed Services, sin requerir una plataforma de supervisión independiente.
 
-Si es responsable de la fiabilidad del servicio, la respuesta a incidentes o el análisis del rendimiento, Observability Insights le ayuda a pasar de los síntomas a la evidencia rápidamente. Combina la telemetría de aplicaciones y las señales de estado en el nivel de host para que los equipos de clientes y Adobe Managed Services puedan investigar los problemas desde una vista operativa compartida.
+Si usted es responsable de la confiabilidad del servicio, la respuesta a incidentes o el análisis del rendimiento, **Observability Insights** le ayuda a pasar de los síntomas a la evidencia rápidamente. Combina la telemetría de aplicaciones y las señales de estado en el nivel de host para que los equipos de clientes y Adobe puedan investigar los problemas desde una vista operativa compartida.
 
 ## ¿Por qué los equipos utilizan Observability Insights? {#why-teams-use-observability-insights}
 
