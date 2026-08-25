@@ -1,21 +1,21 @@
 ---
-title: Supervisión de infraestructura con [!DNL Synoptryx]
-description: Utilice la supervisión de la infraestructura  [!DNL Synoptryx] para revisar las métricas del sistema, la red, los procesos y el almacenamiento en el nivel de host en todo el espacio de AEM Managed Services.
+title: Referencia del tablero de infraestructura
+description: Referencia panel por panel para paneles de infraestructura de Observability Insights, incluidas capturas de pantalla, métricas y unidades.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1091'
 ht-degree: 7%
 
 ---
 
 
-# Panel de supervisión de infraestructura host
+# Referencia del tablero de infraestructura {#infrastructure-dashboard-reference}
 
-En esta sección se describe cada gráfico de monitorización de infraestructura a nivel de host que se muestra en el panel de monitorización de infraestructura. Cada sección explica el propósito de la métrica, los datos que se recopilan, las unidades de medida y la información presentada en la visualización.
+Esta referencia documenta los paneles de infraestructura de nivel de host utilizados en Observability Insights para AEM Managed Services.
 
-## Información general del panel
+## Resumen del panel
 
 El panel de monitorización de la infraestructura del host proporciona visibilidad en tiempo real sobre la utilización y el rendimiento del host subyacente. Estas métricas ayudan a los operadores a monitorizar los recursos de computación, memoria, almacenamiento y red, a la vez que identifican posibles cuellos de botella en los recursos.
 
@@ -32,11 +32,11 @@ El tablero incluye los siguientes paneles de monitorización:
 
 ## &#x200B;1. Utilización de CPU del host
 
-![Utilización de CPU de host](assets/host-monitoring/host_cpu_utilization.png)
+![Utilización de CPU de host](../assets/host-monitoring/host_cpu_utilization.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Uso de CPU del host]** muestra el porcentaje de recursos de CPU que está consumiendo actualmente el sistema operativo y todos los procesos en ejecución a lo largo del tiempo.
+El panel **Uso de CPU del host** muestra el porcentaje de recursos de CPU que está consumiendo actualmente el sistema operativo y todos los procesos en ejecución a lo largo del tiempo.
 
 Esta métrica representa el uso general de CPU en todo el host y proporciona una visualización de la actividad del procesador en series temporales.
 
@@ -71,11 +71,11 @@ El panel resume el uso de CPU con tres valores:
 
 ## &#x200B;2. E/S del disco host
 
-![E/S del disco host](assets/host-monitoring/host_disk_io.png)
+![E/S del disco host](../assets/host-monitoring/host_disk_io.png)
 
 ### Descripción
 
-El panel **[!UICONTROL E/S del disco host]** muestra el rendimiento del almacenamiento para las operaciones de lectura y escritura en disco realizadas por el host.
+El panel **E/S del disco host** muestra el rendimiento del almacenamiento para las operaciones de lectura y escritura en disco realizadas por el host.
 
 El gráfico presenta dos series temporales independientes que representan los datos que se transfieren entre el sistema operativo y los dispositivos de almacenamiento.
 
@@ -109,11 +109,11 @@ La unidad mostrada se adapta automáticamente en función del rendimiento.
 
 ## &#x200B;3. E/S de red host
 
-![E/S de red host](assets/host-monitoring/host_network_io.png)
+![E/S de red host](../assets/host-monitoring/host_network_io.png)
 
 ### Descripción
 
-El panel **[!UICONTROL E/S de red host]** muestra el volumen de tráfico de red transmitido y recibido por el host a lo largo del tiempo.
+El panel **E/S de red host** muestra el volumen de tráfico de red transmitido y recibido por el host a lo largo del tiempo.
 
 El gráfico mide la velocidad a la que los datos fluyen a través de las interfaces de red y proporciona visibilidad sobre el consumo de ancho de banda de la red.
 Esta métrica representa el rendimiento de red agregado.
@@ -152,11 +152,11 @@ en función del volumen de tráfico observado.
 
 ## &#x200B;4. Espera de E/S de CPU
 
-![Espera de E/S de CPU](assets/host-monitoring/cpu_io_wait.png)
+![Espera de E/S de CPU](../assets/host-monitoring/cpu_io_wait.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Espera de E/S de CPU]** muestra el porcentaje de tiempo de CPU empleado esperando a que se completen las operaciones de entrada y salida.
+El panel **Espera de E/S de CPU** muestra el porcentaje de tiempo de CPU empleado esperando a que se completen las operaciones de entrada y salida.
 
 Esta métrica representa el tiempo de inactividad del procesador que se produce porque los procesos activos se bloquean mientras se esperan dispositivos de almacenamiento u otras operaciones de E/S.
 
@@ -189,11 +189,11 @@ El gráfico visualiza cómo la espera de E/S cambia con el tiempo.
 
 ## &#x200B;5. Uso de almacenamiento
 
-![Uso de almacenamiento](assets/host-monitoring/storage_disk_usage.png)
+![Uso de almacenamiento](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Uso del almacenamiento]** muestra el porcentaje general de la capacidad de almacenamiento utilizada actualmente en el host supervisado.
+El panel **Uso del almacenamiento** muestra el porcentaje general de la capacidad de almacenamiento utilizada actualmente en el host supervisado.
 
 El gráfico proporciona una vista histórica de la utilización de la capacidad del sistema de archivos durante el intervalo de tiempo seleccionado.
 
@@ -215,11 +215,11 @@ El gráfico proporciona una vista histórica de la utilización de la capacidad 
 
 ## &#x200B;6. Uso del disco
 
-![Uso de disco](assets/host-monitoring/storage_disk_usage.png)
+![Uso de disco](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Uso del disco]** muestra el uso del almacenamiento para cada sistema de archivos o dispositivo de almacenamiento montado.
+El panel **Uso del disco** muestra el uso del almacenamiento para cada sistema de archivos o dispositivo de almacenamiento montado.
 
 Cada fila corresponde a un dispositivo de bloque específico o partición montada e informa del porcentaje de espacio actualmente en uso.
 
@@ -248,11 +248,11 @@ Cada entrada incluye:
 
 ## &#x200B;7. Promedio de carga de CPU de host
 
-![Promedio de carga de host de CPU](assets/host-monitoring/host_cpu_load_average.png)
+![Promedio de carga de host de CPU](../assets/host-monitoring/host_cpu_load_average.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Promedio de carga de host de CPU]** muestra los promedios de carga del sistema Linux en tres períodos de tiempo móviles.
+El panel **Promedio de carga de host de CPU** muestra los promedios de carga del sistema Linux en tres períodos de tiempo móviles.
 
 A diferencia del uso de CPU, la carga media representa el número promedio de procesos que se están ejecutando de forma activa o que están esperando a que CPU programe o finalice la E/S.
 
@@ -289,11 +289,11 @@ Para cada métrica de carga media:
 
 ## &#x200B;8. Uso de memoria host
 
-![Uso de memoria host](assets/host-monitoring/host_memory_usage.png)
+![Uso de memoria host](../assets/host-monitoring/host_memory_usage.png)
 
 ### Descripción
 
-El panel **[!UICONTROL Uso de memoria host]** muestra el porcentaje de memoria física del sistema asignado actualmente por el sistema operativo.
+El panel **Uso de memoria host** muestra el porcentaje de memoria física del sistema asignado actualmente por el sistema operativo.
 
 Esta métrica representa la utilización general de RAM en todos los procesos en ejecución, memoria de núcleo, búferes y cachés.
 
