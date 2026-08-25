@@ -1,13 +1,13 @@
 ---
-source-git-commit: 43317991c712a8ee9fe721f2635f5ebd5dd0274e
+source-git-commit: e94c1ec35b136696b886ad386a99171879f8a36e
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-# Contribución a la documentación de Adobe Experience Manager Cloud Service
+# Contribución a la documentación de
 
-Gracias por contribuir con la documentación de Adobe Experience Manager Cloud Service. El equipo de documentación agradece las contribuciones de contenido de toda la comunidad de lectores y de otros empleados de Adobe.
+Gracias por contribuir con nuestra documentación. El equipo de documentación agradece las contribuciones de contenido de toda la comunidad de lectores y de otros empleados de Adobe.
 
 Este archivo describe cómo puede contribuir y señala las directrices que debe seguir al realizar sus contribuciones.
 
@@ -17,7 +17,7 @@ Este proyecto ha adoptado el [Código de conducta de Adobe Open Source](code-of-
 
 ## Documentación de guía del colaborador
 
-Consulte la [Guía del colaborador](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es).
+Consulte la [Guía del colaborador](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 ## Cómo contribuir
 
@@ -58,4 +58,4 @@ El equipo de documentación está encantado de recibir cualquier contribución y
 
 ## Información adicional
 
-Consulte la [Guía del colaborador de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es) para obtener más información sobre cómo utilizar la plataforma de creación de GitHub.
+Consulte la [Guía del colaborador de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obtener más información sobre cómo utilizar la plataforma de creación de GitHub.
