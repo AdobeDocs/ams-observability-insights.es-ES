@@ -1,10 +1,12 @@
 ---
-source-git-commit: e5523081fcd68500602e5d1bf853694d1f6c3980
+title: API pública de Observability Insights
+description: La API pública de Observability Insights le permite extraer sus propios datos de observabilidad (solicitar descripciones generales, catálogos de servicios, seguimientos y métricas) directamente en sus propias herramientas, scripts y paneles.
+source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1135'
 ht-degree: 7%
-
 ---
+
 # API pública de Observability Insights
 
 La API pública de Observability Insights le permite extraer sus propios datos de observabilidad (solicitar descripciones generales, catálogos de servicios, seguimientos y métricas) directamente en sus propias herramientas, scripts y paneles.
@@ -14,8 +16,6 @@ La API pública de Observability Insights le permite extraer sus propios datos d
 - **Autenticación:** clave de API (token de portador)
 
 > Reemplace `{{API_BASE_URL}}` en todo este documento con el host de API de su instancia de Observability Insights, por ejemplo `https://insights.adobecqms.net/`.
-
-&#x200B;---
 
 ## &#x200B;1. Obtención de una clave de API
 
@@ -48,7 +48,6 @@ La sección Claves de API enumera todas las claves que ha creado, incluida su or
 - Gire las claves periódicamente y revoque cualquier clave que ya no esté en uso.
 - Si una clave está en peligro, revocarla inmediatamente de **Configuración de organización → Claves de API** y generar un reemplazo.
 
-&#x200B;---
 
 ## &#x200B;2. Autenticando solicitudes
 
@@ -59,8 +58,6 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 ```
 
 Las solicitudes sin una clave válida o con una clave caducada o revocada reciben `401 Unauthorized`. Se aceptan **no** los inicios de sesión (cookies/tokens de explorador) en esta API
-
-&#x200B;---
 
 ## &#x200B;3. Conceptos básicos
 
@@ -110,8 +107,6 @@ Los errores se devuelven como JSON con un campo `error` y, normalmente, un `mess
 | `429 Too Many Requests` | Se sobrepasó el límite de tarifa — ver `Retry-After` |
 | `502 Bad Gateway` | Error en la consulta ascendente: seguro para reintentar |
 | `503 Service Unavailable` | Servidor de datos temporalmente no disponible |
-
-&#x200B;---
 
 ## &#x200B;4. Puntos finales
 
@@ -347,15 +342,11 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
-&#x200B;---
-
 ## &#x200B;5. Qué no hace esta API
 
 - **Sin acceso SQL sin procesar.** Todos los extremos devuelven formas de datos revisadas y creadas específicamente; no puede consultar directamente el almacén de datos subyacente.
 - **No hay consultas entre inquilinos.** Cada solicitud tiene exactamente un ámbito de `tenant_id`.
 - **Sin acceso de escritura.** La API pública es de solo lectura.
-
-&#x200B;---
 
 ## &#x200B;6. Soporte
 
