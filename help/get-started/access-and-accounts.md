@@ -3,13 +3,20 @@ title: Acceso y administración de cuentas
 description: Comprenda cómo se aprovisionan las cuentas de Observability Insights, quién administra el acceso y qué nivel de control tienen los equipos de clientes.
 feature: Operations
 role: Admin
-source-git-commit: 6526a90a017147ac3483c0b2b626b9aa903819ba
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '232'
 ht-degree: 0%
-
 ---
-
 
 # Acceso y administración de cuentas {#access-and-account-management}
 
