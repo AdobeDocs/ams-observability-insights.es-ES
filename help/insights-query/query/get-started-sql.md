@@ -13,7 +13,7 @@ ht-degree: 1%
 | **Se aplica a** | Interfaz de usuario de Insights → **Explorar** y **Paneles** (paneles personalizados) |
 | **Público** | Ingenieros, SRE y usuarios avanzados que conocen SQL |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Cada bloque de código marcado `sql` es una consulta SQL que puede pegar directamente en **Explorar → SQL** o en **Paneles → Agregar widget → SQL**.
 
 ## Introducción a SQL: el idioma de la telemetría {#get-started-with-sql-the-language-of-your-telemetry}
@@ -38,7 +38,7 @@ Utilice SQL para lo siguiente:
 
 SQL admite **consultas de eventos**, que devuelven filas de solicitud individuales, y **consultas de agregados**, que devuelven totales, percentiles, tasas, desgloses y series temporales.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Las plantillas de **Paneles → Crear panel** se han creado completamente a partir de SQL. Abra cualquier widget de plantilla con el icono de lápiz para ver su consulta y aprender de ella.
 
 ### Qué puede consultar
@@ -52,7 +52,7 @@ SQL puede consultar cuatro familias de datos. La lista completa está en el [dic
 | **Métricas genéricas** | `MetricGauge`, `MetricSum` | Cualquier métrica de OpenTelemetry por nombre, detección de métricas |
 | **Composición de span preagregada** | `SpanBreakdown` | Qué operaciones secundarias constituyen una transacción |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Los registros, las definiciones de alertas y las relaciones de inventario no están disponibles.
 
 ### Dónde usar SQL

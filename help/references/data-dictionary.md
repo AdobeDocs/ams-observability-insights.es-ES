@@ -109,7 +109,7 @@ Cada entidad depurada ajusta una métrica de OpenTelemetry con el filtro correct
 | `JvmCpuRecentUtilization` | CPU de proceso JVM | % |         | Resumen de 1 minuto |
 | `DispatcherRequestRate` | Solicitudes HTTP del distribuidor de AEM | req/s | ✔ |                                              |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Las métricas de memoria de JVM se registran **por grupo de memoria**, por lo que `average(value)` en `JvmHeapUsed` / `JvmHeapLimit` promedios entre grupos. Use `FACET host, pool` para obtener una vista exacta por grupo.
 
 ### `SpanBreakdown`: composición de transacciones agregada previamente

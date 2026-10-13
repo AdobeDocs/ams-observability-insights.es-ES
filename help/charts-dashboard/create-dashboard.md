@@ -36,7 +36,7 @@ ht-degree: 1%
 | **Cuadrícula** | 12 columnas. Arrastre los widgets por el control y cambie su tamaño desde la esquina (mínimo 2×2). |
 | **Encabezado de widget** (al pasar el ratón por encima) | Descargar CSV, Descargar PNG, Editar, Duplicar, Eliminar, controlador de arrastre |
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **El guardado es explícito.** Los cambios de diseño, los nuevos widgets, las pestañas y las variables permanecerán en el explorador hasta que hagas clic en **Guardar**. El botón muestra _Guardando... → guardado_ o _Error al guardar_ (consulte [Solución de problemas](#troubleshooting)).
 
 #### Paso 4: Añadir un widget
@@ -60,7 +60,7 @@ Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consu
 3. Utilice el panel **Guía de consulta** para examinar entidades, atributos y ejemplos.
 4. Haga clic en **Ejecutar consulta**. Verá que la consulta _`<Entity>`es válida_, una vista previa en vivo y un resumen (`N rows · N time points · N groups`). Aparece una advertencia _Serie dispersa_ cuando hay menos de tres puntos de tiempo.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > El Generador de consultas abarca las consultas más comunes. Cambiar a SQL para `apdex`, `percentage`, `rate`, `FILTER`, varios agregados, `OR`, `IN`, varias facetas o `ORDER BY`.
 
 #### Paso 5: Configurar el aspecto
@@ -96,7 +96,7 @@ Cuando la fila única de un widget de número lleva un valor de texto (por ejemp
 - **Nota**: texto sin formato (se conservan hasta 4.000 caracteres y líneas en blanco). Utilícelo para vínculos de runbook, propietarios y definiciones de SLO. Se procesaron `{{variables}}`.
 - **Encabezado de sección**: marca _Convertir esto en un encabezado de sección_. Abarca todo el ancho y sus comillas angulares contraen todos los widgets debajo de él, hasta el encabezado de la siguiente sección. Úselo para agrupaciones como **PUBLISH**, **AUTHOR** y **DISPATCHER**.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Los títulos de widgets que terminan en `- PUBLISH` o `- AUTHOR` obtienen una sutil señal de color, lo que facilita la búsqueda por niveles de los paneles de AEM.
 
 ### El selector de tiempo
@@ -112,8 +112,8 @@ Cuando la fila única de un widget de número lleva un valor de texto (por ejemp
 
 Las variables permiten que un tablero sirva a muchos contextos, como un servicio, entorno o umbral a la vez. Se tratan en profundidad en [Tutorial 3](#87-make-dashboards-reusable-with-variables).
 
-> [!WARNING]
-> **Limitación conocida en la versión actual:** `{{variables}}` funcionan en los widgets **títulos** y **widgets de texto** del widget. Dentro del widget **SQL**, se representan en el panel, pero la vista previa de **Agregar widget** y la comprobación de **Guardar** del lado del servidor rechazan el token `{{name}}` sin procesar con _carácter inesperado &#39;{&#39;_. Hasta que esto se arregle, use valores literales en consultas de widget y use **Duplicate** para hacer variantes.
+&#x200B;> [!WARNING]
+> **Limitación conocida en la versión actual:** `{{variables}}` funcionan en los widgets **títulos** y **widgets de texto** del widget. Dentro del widget **SQL**, se representan en el panel, pero la vista previa de **Agregar widget** y la comprobación de **Guardar** del lado del servidor rechazan el token `{{name}}` sin procesar con _carácter inesperado &#39;&lbrace;&#39;_. Hasta que esto se arregle, use valores literales en consultas de widget y use **Duplicate** para hacer variantes.
 
 ### Widgets de fórmula
 
@@ -128,7 +128,7 @@ Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por eje
 | **Importar** | Carga una exportación de JSON **en el tablero que está abierto**, reemplazando sus fichas y variables. Luego haz clic en **Guardar**. Sugerencia: cree primero un tablero vacío y, a continuación, impórtelo. |
 | **CSV / PNG** | Descargas por widget desde el encabezado del widget. |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Exportar e importar permite controlar las versiones de los paneles en Git y promocionar un panel de un cliente a otro. El formato de archivo se describe en el [Apéndice](#142-export-file-format).
 
 ### Sugerencias para el rendimiento de tableros y gráficos

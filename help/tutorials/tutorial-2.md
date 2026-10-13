@@ -66,7 +66,7 @@ Los promedios ocultan periféricos. Los percentiles muestran lo que experimentan
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > p50, p95 y p99 de `Transaction.duration` se sirven desde resúmenes en ventanas largas, por lo que permanecen rápidas para las vistas semanales.
 
 ### Hacer que los resultados sean legibles con etiquetas
@@ -77,7 +77,7 @@ Use `AS` con comillas simples en las etiquetas que contengan espacios:
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Los alias se aplican solamente a `SELECT` elementos. Las columnas de faceta siempre se etiquetan con el nombre del atributo.
 
 ### Hacer coincidir patrones y listas
@@ -100,7 +100,7 @@ Coincidencia con una lista con `IN` y `NOT IN` (hasta 100 valores):
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > SQL no tiene expresiones regulares (`RLIKE`). Combine `LIKE` patrones con `OR` o use `IN`.
 
 ### Ordenar y clasificar con `ORDER BY`
@@ -117,7 +117,7 @@ O los servicios menos utilizados primero:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > No hay `HAVING`. Para buscar solo operaciones &quot;ocupadas&quot;, clasifíquelas por `requests` y mantén el N superior, o agrega un `WHERE` que elimine el ruido (por ejemplo, `WHERE http.method != 'OPTIONS'`).
 
 ### Agrupar por varios atributos

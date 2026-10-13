@@ -38,7 +38,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > Use siempre la faceta `rate()` por `host` (y por `device` para los discos) o filtre a un host. Sin eso, las lecturas de diferentes hosts se mezclan y el resultado no tiene sentido.
 
 Para obtener una tasa de **request** de los seguimientos, cuente las solicitudes en bloques fijos en su lugar. Esto proporciona solicitudes por minuto:
@@ -146,7 +146,7 @@ Reglas para consultas de fórmula:
 | Una métrica cada uno | Cada consulta devuelve exactamente un agregado y no `FACET` |
 | Faltan datos | Un valor que falta o una división por cero produce un punto vacío, nunca `Infinity` ni `NaN` |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Use `TIMESERIES AUTO` en cada consulta de una fórmula de serie temporal. Dado que las consultas comparten una ventana, siempre se resuelven en el mismo tamaño de bloque.
 
 ### Hacer que los paneles se puedan reutilizar con variables
@@ -187,8 +187,8 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Las opciones se actualizan cuando cambia el inquilino o el selector de hora y se ordenan alfabéticamente. Cuando la selección actual ya no es válida, se selecciona automáticamente el primer valor (selección única) o todos los valores (selección múltiple). La consulta de una variable no puede hacer referencia a otras variables.
 
-> [!WARNING]
-> **Límite de compilación actual.** La sustitución se produce en la cuadrícula del panel, pero la vista previa de **Agregar widget** y la **comprobación de guardado del lado del servidor** reciben el token `{{name}}` sin procesar y lo rechazan con el _carácter inesperado &#39;{&#39;_. En la práctica:
+&#x200B;> [!WARNING]
+> **Límite de compilación actual.** La sustitución se produce en la cuadrícula del panel, pero la vista previa de **Agregar widget** y la **comprobación de guardado del lado del servidor** reciben el token `{{name}}` sin procesar y lo rechazan con el _carácter inesperado &#39;&lbrace;&#39;_. En la práctica:
 >
 > - `{{variables}}` en **títulos de widgets** y **widgets de texto** funcionan de extremo a extremo.
 > - `{{variables}}` dentro de **widget SQL** se representa correctamente después de **Importar**, pero el tablero no se puede **guardar** mientras existan estos widgets.

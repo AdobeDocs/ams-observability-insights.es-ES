@@ -10,7 +10,7 @@ La guía es una biblioteca de consultas listas para usar, agrupadas por temas. C
 
 **En este documento:** [10.1 Detección de datos](#101-data-discovery) · [Rendimiento de 10.2](#102-throughput) · [10.3 Latencia](#103-latency) · [10.4 Errores](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Servicios y hosts](#106-services-hosts--instances) · [10.7 Dependencias](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infraestructura](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Reemplace valores de ejemplo como `'checkout'` o `'web-publish-01'` por valores reales de su inquilino. Las consultas de detección de datos siguientes las enumeran.
 
 ### Detección de datos
@@ -385,7 +385,7 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > SQL lee una entidad por consulta, de modo que user/system/iowait/robo necesita cuatro widgets en paralelo (consulte [modelo 11.6](#116-infrastructure-capacity-board) W7-W10). Una fórmula los contraería en un número, no en cuatro series.
 
 **Barra** — CPU p95 por host:
