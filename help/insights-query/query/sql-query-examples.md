@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Ejemplos de consultas SQL
+description: Explore ejemplos de consultas SQL para la telemetría de Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '306'
 ht-degree: 10%
 ---
-### Ejemplos de consultas SQL
+
+## Ejemplos de consultas SQL
 
 Este es un ejemplo más completo. Para esta consulta:
 
@@ -89,7 +92,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 <a id="what-sql-doesnt-do"></a>
 
-### Qué no hace SQL
+## Qué no hace SQL
 
 SQL es deliberadamente pequeño. Esto mantiene las consultas seguras, rápidas y aisladas del inquilino. Cuando necesite una de estas capacidades, utilice la alternativa.
 

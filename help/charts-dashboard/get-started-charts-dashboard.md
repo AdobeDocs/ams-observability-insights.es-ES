@@ -1,9 +1,12 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: Introducción a gráficos y paneles
+description: Aprenda a visualizar datos de Observability Insights con gráficos y paneles.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '309'
 ht-degree: 3%
 ---
+
 ## Gráficos y paneles: visualización de los datos {#charts-and-dashboards-visualizing-your-data}
 
 Las consultas encuentran la información que necesita. Los gráficos y paneles hacen que esa información sea útil para su organización. Este documento muestra cómo los resultados de SQL se convierten en gráficos, y cómo crear, organizar y compartir paneles.

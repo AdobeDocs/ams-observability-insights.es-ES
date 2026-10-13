@@ -1,16 +1,20 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: Consultar libro de cocina
+description: Utilice fórmulas de consulta SQL para investigar la telemetría de aplicaciones e infraestructura en Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '580'
 ht-degree: 0%
 ---
+
 ## Consultar libro de cocina {#query-cookbook}
 
 La guía es una biblioteca de consultas listas para usar, agrupadas por temas. Cada consulta está precedida por el tipo de gráfico que mejor se adapte a ella, en **negrita**. Las cláusulas de tiempo se omiten porque el selector de tiempo controla la ventana.
 
 **En este documento:** [10.1 Detección de datos](#101-data-discovery) · [Rendimiento de 10.2](#102-throughput) · [10.3 Latencia](#103-latency) · [10.4 Errores](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Servicios y hosts](#106-services-hosts--instances) · [10.7 Dependencias](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infraestructura](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Reemplace valores de ejemplo como `'checkout'` o `'web-publish-01'` por valores reales de su inquilino. Las consultas de detección de datos siguientes las enumeran.
 
 ### Detección de datos
@@ -385,7 +389,8 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL lee una entidad por consulta, de modo que user/system/iowait/robo necesita cuatro widgets en paralelo (consulte [modelo 11.6](#116-infrastructure-capacity-board) W7-W10). Una fórmula los contraería en un número, no en cuatro series.
 
 **Barra** — CPU p95 por host:

@@ -1,9 +1,12 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Cómo realizar consultas con SQL
+description: Aprenda a escribir y ejecutar consultas SQL en Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '554'
 ht-degree: 0%
 ---
+
 ## Cómo consultar con SQL: la mecánica de la consulta {#how-to-query-with-sql-the-mechanics-of-querying}
 
 Antes de usar cualquier herramienta, es útil saber cómo funciona. Este documento muestra cómo explorar los datos, explica qué sucede cuando se ejecuta una consulta y muestra consultas de ejemplo de simples a complejas.
@@ -12,7 +15,8 @@ Antes de usar cualquier herramienta, es útil saber cómo funciona. Este documen
 
 La mejor manera de usar SQL es abrir **Explorar** y probarlo con sus propios datos.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > SQL es de solo lectura. No puede cambiar ni eliminar datos, y cada consulta está vinculada a su inquilino.
 
 1. **Elija un cliente** en el conmutador de inquilinos en la parte superior de la aplicación, SQL necesita un solo inquilino.
@@ -37,7 +41,8 @@ FROM Transaction SELECT count(*) FACET service
 
 Esto cuenta las solicitudes por servicio, lo que le muestra qué servicios están generando informes.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **Descubrir antes de compilar.** La disponibilidad de los atributos depende de cómo se instrumente cada servicio. Ejecute primero las [consultas de detección](#101-data-discovery) en un nuevo inquilino para ver qué servicios, hosts, atributos y métricas contienen datos.
 
 ### Ejecución de una consulta
@@ -87,5 +92,6 @@ Cada consulta devuelve una de las cuatro formas. La forma decide qué gráficos 
 | **Explorar** | El selector de tiempo global. Se omiten `SINCE`/`UNTIL` cuando hay un intervalo de selección activo. |
 | **API sin intervalo explícito** | `SINCE`/`UNTIL` en la consulta, valor predeterminado de la última hora. |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Dado que el selector gana en los paneles y en Explorar, esta guía generalmente excluye a `SINCE` de las consultas de panel. Siempre se debe definir un selector de tiempo para las consultas.

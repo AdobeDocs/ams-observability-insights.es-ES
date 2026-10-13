@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Resolución de problemas
+description: Solucione consultas SQL, gráficos y tableros en Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '337'
 ht-degree: 5%
 ---
+
 ## Resolución de problemas {#troubleshooting}
 
 Los mensajes de error aparecen en el editor cuando **Valida** o **Ejecuta** una consulta y en el widget mismo en un panel. Busque el mensaje en la primera columna.

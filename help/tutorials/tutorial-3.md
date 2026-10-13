@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutorial 3: Avance en el tablero'
+description: Cree paneles con variables, fórmulas y varios widgets en Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '902'
 ht-degree: 3%
 ---
+
 ## Tutorial 3: Avance en el tablero {#tutorial-3-advance-your-dashboarding}
 
 En este tutorial, creará los componentes de un panel de control de nivel de producción: puntuaciones de experiencia del usuario, tasas de contador, agrupación de casos, histogramas, mosaicos de KPI con umbrales, secciones, widgets de fórmula y variables.
@@ -38,7 +41,8 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > Use siempre la faceta `rate()` por `host` (y por `device` para los discos) o filtre a un host. Sin eso, las lecturas de diferentes hosts se mezclan y el resultado no tiene sentido.
 
 Para obtener una tasa de **request** de los seguimientos, cuente las solicitudes en bloques fijos en su lugar. Esto proporciona solicitudes por minuto:
@@ -146,7 +150,8 @@ Reglas para consultas de fórmula:
 | Una métrica cada uno | Cada consulta devuelve exactamente un agregado y no `FACET` |
 | Faltan datos | Un valor que falta o una división por cero produce un punto vacío, nunca `Infinity` ni `NaN` |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Use `TIMESERIES AUTO` en cada consulta de una fórmula de serie temporal. Dado que las consultas comparten una ventana, siempre se resuelven en el mismo tamaño de bloque.
 
 ### Hacer que los paneles se puedan reutilizar con variables
@@ -187,8 +192,9 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Las opciones se actualizan cuando cambia el inquilino o el selector de hora y se ordenan alfabéticamente. Cuando la selección actual ya no es válida, se selecciona automáticamente el primer valor (selección única) o todos los valores (selección múltiple). La consulta de una variable no puede hacer referencia a otras variables.
 
-&#x200B;> [!WARNING]
-> **Límite de compilación actual.** La sustitución se produce en la cuadrícula del panel, pero la vista previa de **Agregar widget** y la **comprobación de guardado del lado del servidor** reciben el token `{{name}}` sin procesar y lo rechazan con el _carácter inesperado &#39;&lbrace;&#39;_. En la práctica:
+>[!WARNING]
+>
+> **Límite de compilación actual.** La sustitución se produce en la cuadrícula del panel, pero la vista previa de **Agregar widget** y la **comprobación de guardado del lado del servidor** reciben el token `{{name}}` sin procesar y lo rechazan con `Unexpected character '{'`. En la práctica:
 >
 > - `{{variables}}` en **títulos de widgets** y **widgets de texto** funcionan de extremo a extremo.
 > - `{{variables}}` dentro de **widget SQL** se representa correctamente después de **Importar**, pero el tablero no se puede **guardar** mientras existan estos widgets.

@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Apéndice
+description: Información complementaria de referencia para consultas SQL y paneles de Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '145'
 ht-degree: 5%
 ---
+
 ## Apéndice {#appendix}
 
 **En este documento:** [14.1 Límites](#141-limits) · [14.2 Formato de archivo de exportación](#142-export-file-format) · [14.3 Hoja de trucos de una página](#143-one-page-cheat-sheet)

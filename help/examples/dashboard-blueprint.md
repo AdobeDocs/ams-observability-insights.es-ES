@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: Modelos de panel
+description: Genere paneles de Observability Insights usando modelos para la supervisión de aplicaciones e infraestructura.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1324'
 ht-degree: 1%
 ---
+
 ## Modelos de panel {#dashboard-blueprints}
 
 Cada modelo es un tablero completo y complejo. Enumera el objetivo, el diseño de pestaña y sección, y cada widget con su tipo de gráfico, unidad, umbrales, tamaño y consulta. Los tamaños son `width×height` en la cuadrícula de 12 columnas. Genere cada uno de arriba a abajo y arrástrelos para ajustarlos.
@@ -23,7 +26,7 @@ Cada modelo es un tablero completo y complejo. Enumera el objetivo, el diseño d
 
 **Leyenda de gráfico:** **N** = Número, **L** = Línea, **A** = Área, **B** = Barra, **P** = Circular, **T** = Tabla.
 
-&#x200B;---
+
 
 ### Golden Signals / Tablero SLO
 
@@ -120,7 +123,7 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
-&#x200B;---
+
 
 ### Tablero de clasificación de errores
 
@@ -207,7 +210,7 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
-&#x200B;---
+
 
 ### Tablero de profundización de latencia
 
@@ -276,7 +279,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
 
-&#x200B;---
+
 
 ### Tablero de dependencias descendentes
 
@@ -357,7 +360,7 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
 
-&#x200B;---
+
 
 ### AEM Author / Publish / Tablero de Dispatcher
 
@@ -514,7 +517,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
-&#x200B;---
+
 
 ### Tablero de capacidad de infraestructura
 
@@ -661,7 +664,7 @@ Fórmula:
 netRx + netTx
 ```
 
-&#x200B;---
+
 
 ### Tarjeta de mantenimiento de JVM
 
@@ -733,7 +736,8 @@ Fórmula:
 (used / limit) * 100
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Para definir el ámbito de una fórmula para un host, agregue `WHERE host = 'my-publish-01'` a **ambas** consultas.
 
 **W6 · Montón utilizado por el host** — L, `MB`, 6×4
@@ -766,7 +770,7 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
 
-&#x200B;---
+
 
 ### 11.8 Tablero de pared ejecutivo / NOC
 
@@ -849,7 +853,7 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 
 **W10 · Nota de SLO** — Widget de texto, 12×1.
 
-&#x200B;---
+
 
 ### Proporciones y cabecero (escaparate de la fórmula)
 
@@ -995,13 +999,14 @@ Fórmula (tasa de grabación: 1,0 = consumo del presupuesto exactamente según l
 (errors / total) / 0.001
 ```
 
-&#x200B;---
+
 
 ### Explorador de servicios (controlado por variables)
 
 **Objetivo:** un tablero que cualquier equipo pueda señalar a _su servicio y entorno_.
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > Vea la **limitación de la versión actual** en [Tutorial 3, paso 8.7](#87-make-dashboards-reusable-with-variables): `{{variables}}` dentro del widget SQL aún no se puede previsualizar ni guardar. Hasta que se arregle, reemplace cada `{{…}}` por un literal (p. ej. `'checkout'`) y use _Duplicate_ para clonar el tablero por servicio. El diseño siguiente está listo para cuando se admita la sustitución de principio a fin.
 
 **Variables**

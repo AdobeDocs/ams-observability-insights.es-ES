@@ -1,17 +1,20 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: Crear un tablero
+description: Aprenda a crear, configurar, guardar y compartir paneles de Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '1117'
+source-wordcount: '1129'
 ht-degree: 1%
 ---
-### Creación de un tablero, paso a paso
 
-#### Paso 1: Antes de comenzar
+## Creación de un tablero, paso a paso
+
+### Paso 1: Antes de comenzar
 
 - **Seleccione un solo cliente** en el conmutador de inquilinos. **Crear tablero** está deshabilitado mientras que **Todas las cuentas** está seleccionado. SQL no se puede ejecutar con el inquilino de demostración.
 - **Roles.** Cualquier persona con acceso al tablero puede añadir, editar y guardar widgets. Crear o editar **variables** e inspeccionar la consulta de un widget está limitado a **administradores de organización** y **superadministradores**.
 
-#### Paso 2: Crear el tablero
+### Paso 2: Crear el tablero
 
 1. Abra **Paneles** en el panel de navegación izquierdo.
 2. Haga clic en **Crear tablero**.
@@ -26,7 +29,7 @@ ht-degree: 1%
 
 4. Escriba un **nombre** y confirme. Se abre el lienzo del panel.
 
-#### Paso 3: Conozca el lienzo
+### Paso 3: Conozca el lienzo
 
 | Área | Controles |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -36,10 +39,11 @@ ht-degree: 1%
 | **Cuadrícula** | 12 columnas. Arrastre los widgets por el control y cambie su tamaño desde la esquina (mínimo 2×2). |
 | **Encabezado de widget** (al pasar el ratón por encima) | Descargar CSV, Descargar PNG, Editar, Duplicar, Eliminar, controlador de arrastre |
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **El guardado es explícito.** Los cambios de diseño, los nuevos widgets, las pestañas y las variables permanecerán en el explorador hasta que hagas clic en **Guardar**. El botón muestra _Guardando... → guardado_ o _Error al guardar_ (consulte [Solución de problemas](#troubleshooting)).
 
-#### Paso 4: Añadir un widget
+### Paso 4: Añadir un widget
 
 Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consulta única**, **Fórmula** y **Texto**. También tiene su propio selector de tiempo, por lo que puede previsualizar el widget en cualquier ventana.
 
@@ -60,10 +64,11 @@ Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consu
 3. Utilice el panel **Guía de consulta** para examinar entidades, atributos y ejemplos.
 4. Haga clic en **Ejecutar consulta**. Verá que la consulta _`<Entity>`es válida_, una vista previa en vivo y un resumen (`N rows · N time points · N groups`). Aparece una advertencia _Serie dispersa_ cuando hay menos de tres puntos de tiempo.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > El Generador de consultas abarca las consultas más comunes. Cambiar a SQL para `apdex`, `percentage`, `rate`, `FILTER`, varios agregados, `OR`, `IN`, varias facetas o `ORDER BY`.
 
-#### Paso 5: Configurar el aspecto
+### Paso 5: Configurar el aspecto
 
 | Campo | Notas |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -72,11 +77,11 @@ Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consu
 | **Unidad** | Opcional; hasta 40 caracteres (`ms`, `%`, `req/s`, `MB`, `bytes`). Déjela vacía para utilizar la unidad deducida (por ejemplo `ms` para `duration`, `%` para `CpuUtilization`). |
 | **Umbrales de color** | Solo widgets numéricos. Hasta 10 bandas con el formato _en o por encima de `value` → Verde / Ámbar / Rojo_. La banda más alta gana. |
 
-#### Paso 6: Guardar el widget y luego el tablero
+### Paso 6: Guardar el widget y luego el tablero
 
 **Guardar widget** solo se habilita después de que una ejecución devuelva datos. Los nuevos widgets tienen 6 columnas × 3 filas y se empaquetan dos por fila. Organícelos y luego haga clic en **Guardar** en la barra superior.
 
-### Elija el gráfico correcto
+## Elija el gráfico correcto
 
 | Forma Consulta | Mejor gráfico | ¿Por qué? |
 | ------------------------------------------------- | ------------------- | ---------------------------------------------- |
@@ -89,17 +94,18 @@ Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consu
 
 Cuando la fila única de un widget de número lleva un valor de texto (por ejemplo, `latest(host)`), el widget lo muestra como un subtítulo.
 
-### Widgets de texto: notas y encabezados de sección
+## Widgets de texto: notas y encabezados de sección
 
 **Agregar widget → texto**:
 
 - **Nota**: texto sin formato (se conservan hasta 4.000 caracteres y líneas en blanco). Utilícelo para vínculos de runbook, propietarios y definiciones de SLO. Se procesaron `{{variables}}`.
 - **Encabezado de sección**: marca _Convertir esto en un encabezado de sección_. Abarca todo el ancho y sus comillas angulares contraen todos los widgets debajo de él, hasta el encabezado de la siguiente sección. Úselo para agrupaciones como **PUBLISH**, **AUTHOR** y **DISPATCHER**.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Los títulos de widgets que terminan en `- PUBLISH` o `- AUTHOR` obtienen una sutil señal de color, lo que facilita la búsqueda por niveles de los paneles de AEM.
 
-### El selector de tiempo
+## El selector de tiempo
 
 - Establece la ventana para **cada** widget y para las opciones de variables basadas en consultas.
 - Anula `SINCE` / `UNTIL` en las consultas de widgets.
@@ -108,18 +114,19 @@ Cuando la fila única de un widget de número lleva un valor de texto (por ejemp
 - El subtítulo de cada widget muestra la ventana aplicada, por ejemplo _Desde hace una hora_.
 - Los resultados se almacenan en caché durante 30 segundos. Utilice el botón de actualización para forzar una nueva ejecución.
 
-### Variables
+## Variables
 
 Las variables permiten que un tablero sirva a muchos contextos, como un servicio, entorno o umbral a la vez. Se tratan en profundidad en [Tutorial 3](#87-make-dashboards-reusable-with-variables).
 
-&#x200B;> [!WARNING]
-> **Limitación conocida en la versión actual:** `{{variables}}` funcionan en los widgets **títulos** y **widgets de texto** del widget. Dentro del widget **SQL**, se representan en el panel, pero la vista previa de **Agregar widget** y la comprobación de **Guardar** del lado del servidor rechazan el token `{{name}}` sin procesar con _carácter inesperado &#39;&lbrace;&#39;_. Hasta que esto se arregle, use valores literales en consultas de widget y use **Duplicate** para hacer variantes.
+>[!WARNING]
+>
+> **Limitación conocida en la versión actual:** `{{variables}}` funcionan en los widgets **títulos** y **widgets de texto** del widget. Dentro del widget **SQL**, se representan en el panel, pero la vista previa de **Agregar widget** y la comprobación de **Guardar** del lado del servidor rechazan el token `{{name}}` sin procesar con `Unexpected character '{'`. Hasta que esto se arregle, use valores literales en consultas de widget y use **Duplicate** para hacer variantes.
 
-### Widgets de fórmula
+## Widgets de fórmula
 
 Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por ejemplo `(errors / total) * 100`. Utilice una cuando un KPI necesite más de una consulta, como una relación, un margen de ampliación, una suma de tasas o una tasa de grabación. Ver [Tutorial 3](#86-combine-queries-with-formula-widgets).
 
-### Compartir, exportar e importar
+## Compartir, exportar e importar
 
 | Acción | Qué hace |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -128,10 +135,11 @@ Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por eje
 | **Importar** | Carga una exportación de JSON **en el tablero que está abierto**, reemplazando sus fichas y variables. Luego haz clic en **Guardar**. Sugerencia: cree primero un tablero vacío y, a continuación, impórtelo. |
 | **CSV / PNG** | Descargas por widget desde el encabezado del widget. |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Exportar e importar permite controlar las versiones de los paneles en Git y promocionar un panel de un cliente a otro. El formato de archivo se describe en el [Apéndice](#142-export-file-format).
 
-### Sugerencias para el rendimiento de tableros y gráficos
+## Sugerencias para el rendimiento de tableros y gráficos
 
 - **Use tablas para grandes conjuntos de resultados** en lugar de barras o líneas de varias series.
 - **Dividir tableros ocupados en fichas.** Solo se ejecutan los widgets de la pestaña visible.

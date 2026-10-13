@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutorial 4: Funciones avanzadas'
+description: Aprenda a utilizar funciones SQL avanzadas para analizar la telemetría de Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '507'
 ht-degree: 1%
 ---
+
 ## Tutorial 4: Funciones avanzadas {#tutorial-4-advanced-functions}
 
 Este tutorial cubre las funciones y entidades que impulsan investigaciones más profundas: variabilidad, crecimiento, búsquedas del &quot;peor ejemplo&quot;, proporción del total, composición de transacciones y métricas arbitrarias de OpenTelemetry.
@@ -64,7 +67,8 @@ Tendencia de un segmento con el tiempo:
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > `avgDurationMs` no se ha etiquetado automáticamente con una unidad. Establezca el widget **Unit** en `ms`.
 
 ### Descubra y consulte cualquier métrica
@@ -91,7 +95,8 @@ Para ver qué **atributos span** se rellenan para cada servicio, cuente los valo
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Cuando existe una entidad depurada (por ejemplo, `CpuUtilization`), preferirla sobre `MetricGauge`. Aplica el filtro y la conversión de unidad adecuados, y puede acelerarse con el resumen.
 
 ### Elija la entidad de seguimiento adecuada

@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Introducción a SQL Server
+description: Aprenda a consultar la telemetría de Observability Insights mediante SQL.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '684'
 ht-degree: 1%
 ---
-# Empezar
+
+# Introducción
 
 **Adobe Observability Insights Query Language (SQL)**: consulte, grafique y tablero su telemetría en Adobe Observability Insights.
 
@@ -13,7 +16,8 @@ ht-degree: 1%
 | **Se aplica a** | Interfaz de usuario de Insights → **Explorar** y **Paneles** (paneles personalizados) |
 | **Público** | Ingenieros, SRE y usuarios avanzados que conocen SQL |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Cada bloque de código marcado `sql` es una consulta SQL que puede pegar directamente en **Explorar → SQL** o en **Paneles → Agregar widget → SQL**.
 
 ## Introducción a SQL: el idioma de la telemetría {#get-started-with-sql-the-language-of-your-telemetry}
@@ -38,7 +42,8 @@ Utilice SQL para lo siguiente:
 
 SQL admite **consultas de eventos**, que devuelven filas de solicitud individuales, y **consultas de agregados**, que devuelven totales, percentiles, tasas, desgloses y series temporales.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Las plantillas de **Paneles → Crear panel** se han creado completamente a partir de SQL. Abra cualquier widget de plantilla con el icono de lápiz para ver su consulta y aprender de ella.
 
 ### Qué puede consultar
@@ -52,7 +57,8 @@ SQL puede consultar cuatro familias de datos. La lista completa está en el [dic
 | **Métricas genéricas** | `MetricGauge`, `MetricSum` | Cualquier métrica de OpenTelemetry por nombre, detección de métricas |
 | **Composición de span preagregada** | `SpanBreakdown` | Qué operaciones secundarias constituyen una transacción |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Los registros, las definiciones de alertas y las relaciones de inventario no están disponibles.
 
 ### Dónde usar SQL

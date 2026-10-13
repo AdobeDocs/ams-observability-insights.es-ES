@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: Diccionario de datos
+description: Haga referencia a las entidades y atributos disponibles para las consultas SQL de Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '598'
 ht-degree: 21%
 ---
+
 ## Diccionario de datos {#data-dictionary}
 
 Esta es cada entidad y atributo que puede consultar. El catálogo en vivo, con descripciones, también está en el panel **Guía de consulta** en Explorar y en el cuadro de diálogo Agregar widget.
@@ -109,7 +112,8 @@ Cada entidad depurada ajusta una métrica de OpenTelemetry con el filtro correct
 | `JvmCpuRecentUtilization` | CPU de proceso JVM | % |         | Resumen de 1 minuto |
 | `DispatcherRequestRate` | Solicitudes HTTP del distribuidor de AEM | req/s | ✔ |                                              |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Las métricas de memoria de JVM se registran **por grupo de memoria**, por lo que `average(value)` en `JvmHeapUsed` / `JvmHeapLimit` promedios entre grupos. Use `FACET host, pool` para obtener una vista exacta por grupo.
 
 ### `SpanBreakdown`: composición de transacciones agregada previamente

@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Rendimiento
+description: Mejore el rendimiento de consultas, gráficos y tableros en Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '217'
-ht-degree: 2%
+source-wordcount: '227'
+ht-degree: 3%
 ---
+
 ## Rendimiento {#performance}
 
 Cada consulta se ejecuta con un tiempo de espera de 15 segundos y un presupuesto de lectura de bytes. Este documento explica cómo Observability Insights acelera las consultas automáticamente y cómo diseñar paneles que se mantengan rápidos en cualquier intervalo de tiempo.
