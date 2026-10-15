@@ -1,17 +1,15 @@
 ---
 title: 'Tutorial 2: Control de datos'
 description: Aprenda a filtrar, agrupar y controlar los resultados de las consultas en Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '337'
 ht-degree: 0%
 ---
 
 ## Tutorial 2: Control de datos {#tutorial-2-control-your-data}
 
 En este tutorial, aprenderá las funciones y cláusulas que convierten los recuentos sin procesar en respuestas: recuentos distintos, valores más recientes, porcentajes, percentiles, caracteres comodín, ordenación y agrupación multidimensional.
-
-**En este tutorial:** [7.1 uniqueCount](#71-count-distinct-values-with-uniquecount) · [7.2 más reciente/más reciente](#72-find-the-latest-and-earliest-values) · [7.3 porcentaje](#73-calculate-percentages) · [7.4 percentil](#74-understand-latency-with-percentile) · [7.5 Etiquetas](#75-make-results-readable-with-labels) · [7.6 Comodines y listas](#76-match-patterns-and-lists) · [7.7 Clasificación](#77-sort-and-rank-with-order-by) · [7.8 Múltiples facetas](#78-group-by-several-attributes) · [7.9 windows](#79-look-at-a-past-window)
 
 ### Contar valores distintos con `uniqueCount`
 
@@ -69,7 +67,7 @@ Los promedios ocultan periféricos. Los percentiles muestran lo que experimentan
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
->[!TIP]
+> **Sugerencia**
 >
 > p50, p95 y p99 de `Transaction.duration` se sirven desde resúmenes en ventanas largas, por lo que permanecen rápidas para las vistas semanales.
 
@@ -123,7 +121,7 @@ O los servicios menos utilizados primero:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
->[!TIP]
+> **Sugerencia**
 >
 > No hay `HAVING`. Para buscar solo operaciones &quot;ocupadas&quot;, clasifíquelas por `requests` y mantén el N superior, o agrega un `WHERE` que elimine el ruido (por ejemplo, `WHERE http.method != 'OPTIONS'`).
 

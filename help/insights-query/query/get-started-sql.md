@@ -1,9 +1,9 @@
 ---
 title: Introducción a SQL Server
 description: Aprenda a consultar la telemetría de Observability Insights mediante SQL.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '687'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **Se aplica a** | Interfaz de usuario de Insights → **Explorar** y **Paneles** (paneles personalizados) |
 | **Público** | Ingenieros, SRE y usuarios avanzados que conocen SQL |
 
->[!TIP]
+> **Sugerencia**
 >
 > Cada bloque de código marcado `sql` es una consulta SQL que puede pegar directamente en **Explorar → SQL** o en **Paneles → Agregar widget → SQL**.
 
@@ -42,13 +42,13 @@ Utilice SQL para lo siguiente:
 
 SQL admite **consultas de eventos**, que devuelven filas de solicitud individuales, y **consultas de agregados**, que devuelven totales, percentiles, tasas, desgloses y series temporales.
 
->[!TIP]
+> **Sugerencia**
 >
 > Las plantillas de **Paneles → Crear panel** se han creado completamente a partir de SQL. Abra cualquier widget de plantilla con el icono de lápiz para ver su consulta y aprender de ella.
 
 ### Qué puede consultar
 
-SQL puede consultar cuatro familias de datos. La lista completa está en el [diccionario de datos](#data-dictionary).
+SQL puede consultar cuatro familias de datos. La lista completa está en el [diccionario de datos](/help/references/data-dictionary.md).
 
 | Familia | Entidades | Preguntas habituales |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ SQL puede consultar cuatro familias de datos. La lista completa está en el [dic
 | **Métricas genéricas** | `MetricGauge`, `MetricSum` | Cualquier métrica de OpenTelemetry por nombre, detección de métricas |
 | **Composición de span preagregada** | `SpanBreakdown` | Qué operaciones secundarias constituyen una transacción |
 
->[!NOTE]
+> **Nota**
 >
 > Los registros, las definiciones de alertas y las relaciones de inventario no están disponibles.
 
@@ -97,7 +97,7 @@ FROM    Entity
 Estas son las reglas que SQL sigue:
 
 | Regla | Detalles |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Cláusulas requeridas** | Se requieren `SELECT` y `FROM`. Todas las demás cláusulas son opcionales. Puede empezar con: `FROM Transaction SELECT count(*)` también es válido. |
 | **Orden de la cláusula** | Las cláusulas posteriores a `FROM` pueden aparecer en cualquier orden. Cada cláusula puede aparecer una sola vez. |
 | **Tamaño de consulta** | Una consulta debe tener 4 KB o menos. |
@@ -106,5 +106,5 @@ Estas son las reglas que SQL sigue:
 | **Literales** | Cadenas, números (incluidos negativos y decimales), `TRUE`, `FALSE`, `NULL`. |
 | **Nombres de atributos** | Los nombres pueden contener letras, dígitos, `_` y `.` (por ejemplo `http.statusCode`). No se necesitan palos traseros. |
 | **Agregados vs. atributos** | Una consulta selecciona atributos sin procesar (una lista de eventos) o agregados, nunca ambos. Para agrupar, use `FACET`. |
-| **Ventana de tiempo** | El valor predeterminado es la última hora. El máximo es de 31 días. En los paneles y en Explorar, el **selector de tiempo** establece la ventana (consulte [Ventana de tiempo](#time-window-precedence)). |
-| **No compatible** | Punto y coma, comentarios, subconsultas, combinaciones, `SELECT *`, matemáticas entre atributos en `SELECT`, `HAVING`, `COMPARE WITH`. Vea [Lo que SQL no hace](#what-sql-doesnt-do) para obtener alternativas. |
+| **Ventana de tiempo** | El valor predeterminado es la última hora. El máximo es de 31 días. En los paneles y en Explorar, el **selector de tiempo** establece la ventana (consulte [Ventana de tiempo](how-to-query-sql.md#time-window-precedence)). |
+| **No compatible** | Punto y coma, comentarios, subconsultas, combinaciones, `SELECT *`, matemáticas entre atributos en `SELECT`, `HAVING`, `COMPARE WITH`. Vea [Lo que SQL no hace](sql-query-examples.md#what-sql-doesnt-do) para obtener alternativas. |

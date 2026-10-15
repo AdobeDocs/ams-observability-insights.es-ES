@@ -1,17 +1,15 @@
 ---
 title: 'Tutorial 1: Sus primeras consultas'
 description: Escriba sus primeras consultas SQL con la telemetría de Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 52cc24792c47727700428be58b5bbb2a5c7223d2
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '552'
 ht-degree: 0%
 ---
 
 ## Tutorial 1: Sus primeras consultas {#tutorial-1-your-first-queries}
 
 Bienvenido a SQL. En este tutorial escribirá sus primeras consultas, controlará la ventana de tiempo, trazará tendencias, filtrará y agrupará resultados y colocará su primer gráfico en un panel. Cada paso se basa en el anterior.
-
-**En este tutorial:** [Antes de comenzar](#before-you-begin) · [6.1 Eventos de consulta](#61-query-events-with-select-from-and-limit) · [6.2 Agregado](#62-aggregate-your-data) · [6.3 Varios agregados](#63-return-several-aggregates-at-once) · [6.4 Ventana de tiempo](#64-set-the-time-window) · [6.5 SERIES DE TIEMPO](#65-plot-trends-with-timeseries) · [6.6 DÓNDE](#66-filter-with-where) · [6.7 FACETA](#67-group-with-facet) · [6.8 Guardar en un tablero](#68-save-your-query-to-a-dashboard)
 
 ### Antes de empezar
 
@@ -35,7 +33,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Las filas se ordenan por la primera columna, en sentido de bajada, de modo que al colocar `timestamp` en primer lugar, se muestran las solicitudes más recientes en la parte superior.
 
->[!NOTE]
+> **Nota**
 >
 > SQL no tiene `SELECT *`. La lista de atributos mantiene los resultados pequeños y legibles. El [diccionario de datos](#data-dictionary) y el completado automático en el editor muestran lo que está disponible.
 
@@ -69,7 +67,7 @@ Separe los agregados con comas y asigne a cada uno `AS` nombres:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
->[!TIP]
+> **Sugerencia**
 >
 > Los alias se convierten en encabezados de columna y etiquetas de leyenda y son a los que se hace referencia en `ORDER BY`. Toma el hábito de nombrar cada agregado.
 
@@ -89,7 +87,7 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Las unidades pueden ser `second`, `minute`, `hour`, `day` o `week`. La ventana puede ser de 31 días como máximo.
 
->[!IMPORTANT]
+> **Importante**
 >
 > En **Explorar** y en **paneles**, el **selector de tiempo** en la parte superior de la página controla la ventana y anula `SINCE`/`UNTIL`. Para ver otro período, cambie el selector. El resto de esta guía excluye a `SINCE` de las consultas de panel por ese motivo.
 
@@ -127,7 +125,7 @@ Use `LIKE` con `%` para las coincidencias parciales:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
->[!NOTE]
+> **Nota**
 >
 > Los valores de cadena distinguen entre mayúsculas y minúsculas y utilizan comillas simples: `'Error'`, no `"Error"` ni `'error'`. Reemplazar `checkout` por un servicio de su inquilino. El siguiente paso muestra cómo enumerarlos.
 
