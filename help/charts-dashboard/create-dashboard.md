@@ -1,9 +1,9 @@
 ---
 title: Crear un tablero
 description: Aprenda a crear, configurar, guardar y compartir paneles de Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 2e851e1a3d9f8fbdb220ecd0d37fba0f6b0188df
 workflow-type: tm+mt
-source-wordcount: '1129'
+source-wordcount: '1134'
 ht-degree: 1%
 ---
 
@@ -39,9 +39,9 @@ ht-degree: 1%
 | **Cuadrícula** | 12 columnas. Arrastre los widgets por el control y cambie su tamaño desde la esquina (mínimo 2×2). |
 | **Encabezado de widget** (al pasar el ratón por encima) | Descargar CSV, Descargar PNG, Editar, Duplicar, Eliminar, controlador de arrastre |
 
->[!IMPORTANT]
+> **Importante**
 >
-> **El guardado es explícito.** Los cambios de diseño, los nuevos widgets, las pestañas y las variables permanecerán en el explorador hasta que hagas clic en **Guardar**. El botón muestra _Guardando... → guardado_ o _Error al guardar_ (consulte [Solución de problemas](#troubleshooting)).
+> **El guardado es explícito.** Los cambios de diseño, los nuevos widgets, las pestañas y las variables permanecerán en el explorador hasta que hagas clic en **Guardar**. El botón muestra _Guardando... → guardado_ o _Error al guardar_ (consulte [Solución de problemas](../operate/troubleshooting.md)).
 
 ### Paso 4: Añadir un widget
 
@@ -64,7 +64,7 @@ Haga clic en **Agregar widget**. El cuadro de diálogo tiene tres modos: **Consu
 3. Utilice el panel **Guía de consulta** para examinar entidades, atributos y ejemplos.
 4. Haga clic en **Ejecutar consulta**. Verá que la consulta _`<Entity>`es válida_, una vista previa en vivo y un resumen (`N rows · N time points · N groups`). Aparece una advertencia _Serie dispersa_ cuando hay menos de tres puntos de tiempo.
 
->[!TIP]
+> **Sugerencia**
 >
 > El Generador de consultas abarca las consultas más comunes. Cambiar a SQL para `apdex`, `percentage`, `rate`, `FILTER`, varios agregados, `OR`, `IN`, varias facetas o `ORDER BY`.
 
@@ -101,7 +101,7 @@ Cuando la fila única de un widget de número lleva un valor de texto (por ejemp
 - **Nota**: texto sin formato (se conservan hasta 4.000 caracteres y líneas en blanco). Utilícelo para vínculos de runbook, propietarios y definiciones de SLO. Se procesaron `{{variables}}`.
 - **Encabezado de sección**: marca _Convertir esto en un encabezado de sección_. Abarca todo el ancho y sus comillas angulares contraen todos los widgets debajo de él, hasta el encabezado de la siguiente sección. Úselo para agrupaciones como **PUBLISH**, **AUTHOR** y **DISPATCHER**.
 
->[!TIP]
+> **Sugerencia**
 >
 > Los títulos de widgets que terminan en `- PUBLISH` o `- AUTHOR` obtienen una sutil señal de color, lo que facilita la búsqueda por niveles de los paneles de AEM.
 
@@ -116,15 +116,15 @@ Cuando la fila única de un widget de número lleva un valor de texto (por ejemp
 
 ## Variables
 
-Las variables permiten que un tablero sirva a muchos contextos, como un servicio, entorno o umbral a la vez. Se tratan en profundidad en [Tutorial 3](#87-make-dashboards-reusable-with-variables).
+Las variables permiten que un tablero sirva a muchos contextos, como un servicio, entorno o umbral a la vez. Se tratan en profundidad en [Tutorial 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables).
 
->[!WARNING]
+> **Advertencia**
 >
 > **Limitación conocida en la versión actual:** `{{variables}}` funcionan en los widgets **títulos** y **widgets de texto** del widget. Dentro del widget **SQL**, se representan en el panel, pero la vista previa de **Agregar widget** y la comprobación de **Guardar** del lado del servidor rechazan el token `{{name}}` sin procesar con `Unexpected character '{'`. Hasta que esto se arregle, use valores literales en consultas de widget y use **Duplicate** para hacer variantes.
 
 ## Widgets de fórmula
 
-Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por ejemplo `(errors / total) * 100`. Utilice una cuando un KPI necesite más de una consulta, como una relación, un margen de ampliación, una suma de tasas o una tasa de grabación. Ver [Tutorial 3](#86-combine-queries-with-formula-widgets).
+Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por ejemplo `(errors / total) * 100`. Utilice una cuando un KPI necesite más de una consulta, como una relación, un margen de ampliación, una suma de tasas o una tasa de grabación. Ver [Tutorial 3](../tutorials/tutorial-3.md#combine-queries-with-formula-widgets).
 
 ## Compartir, exportar e importar
 
@@ -135,9 +135,9 @@ Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por eje
 | **Importar** | Carga una exportación de JSON **en el tablero que está abierto**, reemplazando sus fichas y variables. Luego haz clic en **Guardar**. Sugerencia: cree primero un tablero vacío y, a continuación, impórtelo. |
 | **CSV / PNG** | Descargas por widget desde el encabezado del widget. |
 
->[!TIP]
+> **Sugerencia**
 >
-> Exportar e importar permite controlar las versiones de los paneles en Git y promocionar un panel de un cliente a otro. El formato de archivo se describe en el [Apéndice](#142-export-file-format).
+> Exportar e importar permite controlar las versiones de los paneles en Git y promocionar un panel de un cliente a otro. El formato de archivo se describe en el [Apéndice](../operate/appendix.md).
 
 ## Sugerencias para el rendimiento de tableros y gráficos
 
@@ -146,4 +146,4 @@ Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por eje
 - **Siempre `LIMIT` consultas con facetas**, especialmente en atributos de alta cardinalidad como `urlPath`, `traceId` y `jcr.path`.
 - **Filtrar antes** por atributos de baja cardinalidad (`service`, `kind`, `status`).
 - **Prefiera`TIMESERIES AUTO`** a los contenedores pequeños fijos y evite `TIMESERIES MAX` excepto en unos minutos.
-- **Diseñar tendencias de largo alcance para resúmenes.** Ver [Rendimiento](#performance).
+- **Diseñar tendencias de largo alcance para resúmenes.** Ver [Rendimiento](../operate/performance.md).

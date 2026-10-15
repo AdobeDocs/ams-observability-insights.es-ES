@@ -1,7 +1,7 @@
 ---
 title: Diccionario de datos
 description: Haga referencia a las entidades y atributos disponibles para las consultas SQL de Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 21%
@@ -14,8 +14,8 @@ Esta es cada entidad y atributo que puede consultar. El catálogo en vivo, con d
 ### Seguimiento de entidades
 
 | Entidad | Contiene | Ámbito fijo | Resúmenes |
-| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------ |
-| `Transaction` | Solicitudes de servidor entrantes | `kind = Server` | 1m / 5m / 1h ([Rendimiento](#performance)) |
+| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `Transaction` | Solicitudes de servidor entrantes | `kind = Server` | 1m / 5m / 1h ([Rendimiento](../operate/performance.md)) |
 | `AppRequest` | Solicitudes de consumidor de mensajes del servidor entrante **y** | `kind IN (Server, Consumer)` | — |
 | `Span` | Cada intervalo (servidor, cliente, productor, consumidor, interno) | — | — |
 
