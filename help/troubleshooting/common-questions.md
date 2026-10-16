@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: ba4f816187e77f3f7b708942b3f14535417c2fdc
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '253'
 ht-degree: 0%
 ---
 
@@ -37,3 +37,11 @@ Comience con [Supervisión del rendimiento de la aplicación](/help/applications
 ## ¿Qué datos recopila realmente Observability Insights? {#what-data-is-collected}
 
 Consulte [Cobertura, entornos y retención de datos](../get-started/coverage-and-data.md) para supervisar el ámbito, la representación de la aplicación, los períodos de retención y las implicaciones operativas.
+
+## ¿Por qué puedo iniciar sesión con otros navegadores pero no con Google Chrome?
+
+Para permitir cookies de terceros para Observability Insights e intentar iniciar sesión de nuevo:
+
+1. Para obtener acceso a la configuración de cookies, abra `chrome://settings/cookies` en Google Chrome.
+2. Para permitir cookies para Observability Insights, en **Sitios con permiso para usar cookies de terceros**, seleccione **Agregar** e introduzca `https://insights.adobecqms.net`.
+3. Para comprobar si el problema está resuelto, inicie sesión en Observability Insights en una ventana de incógnito.
