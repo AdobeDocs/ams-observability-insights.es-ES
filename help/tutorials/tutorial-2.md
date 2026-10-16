@@ -1,9 +1,9 @@
 ---
 title: 'Tutorial 2: Control de datos'
 description: Aprenda a filtrar, agrupar y controlar los resultados de las consultas en Observability Insights.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '336'
 ht-degree: 0%
 ---
 
@@ -67,7 +67,7 @@ Los promedios ocultan periféricos. Los percentiles muestran lo que experimentan
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> **Sugerencia**
+>[!TIP]
 >
 > p50, p95 y p99 de `Transaction.duration` se sirven desde resúmenes en ventanas largas, por lo que permanecen rápidas para las vistas semanales.
 

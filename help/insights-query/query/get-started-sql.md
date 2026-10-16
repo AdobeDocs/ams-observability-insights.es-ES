@@ -1,9 +1,9 @@
 ---
 title: Introducción a SQL Server
 description: Aprenda a consultar la telemetría de Observability Insights mediante SQL.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '684'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **Se aplica a** | Interfaz de usuario de Insights → **Explorar** y **Paneles** (paneles personalizados) |
 | **Público** | Ingenieros, SRE y usuarios avanzados que conocen SQL |
 
-> **Sugerencia**
+>[!TIP]
 >
 > Cada bloque de código marcado `sql` es una consulta SQL que puede pegar directamente en **Explorar → SQL** o en **Paneles → Agregar widget → SQL**.
 
@@ -42,7 +42,7 @@ Utilice SQL para lo siguiente:
 
 SQL admite **consultas de eventos**, que devuelven filas de solicitud individuales, y **consultas de agregados**, que devuelven totales, percentiles, tasas, desgloses y series temporales.
 
-> **Sugerencia**
+>[!TIP]
 >
 > Las plantillas de **Paneles → Crear panel** se han creado completamente a partir de SQL. Abra cualquier widget de plantilla con el icono de lápiz para ver su consulta y aprender de ella.
 
@@ -57,7 +57,7 @@ SQL puede consultar cuatro familias de datos. La lista completa está en el [dic
 | **Métricas genéricas** | `MetricGauge`, `MetricSum` | Cualquier métrica de OpenTelemetry por nombre, detección de métricas |
 | **Composición de span preagregada** | `SpanBreakdown` | Qué operaciones secundarias constituyen una transacción |
 
-> **Nota**
+>[!NOTE]
 >
 > Los registros, las definiciones de alertas y las relaciones de inventario no están disponibles.
 

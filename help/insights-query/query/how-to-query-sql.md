@@ -1,9 +1,9 @@
 ---
 title: Cómo realizar consultas con SQL
 description: Aprenda a escribir y ejecutar consultas SQL en Observability Insights.
-source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 0%
 ---
 
@@ -15,7 +15,7 @@ Antes de usar cualquier herramienta, es útil saber cómo funciona. Este documen
 
 La mejor manera de usar SQL es abrir **Explorar** y probarlo con sus propios datos.
 
-> **Sugerencia**
+>[!TIP]
 >
 > SQL es de solo lectura. No puede cambiar ni eliminar datos, y cada consulta está vinculada a su inquilino.
 
@@ -92,6 +92,6 @@ Cada consulta devuelve una de las cuatro formas. La forma decide qué gráficos 
 | **Explorar** | El selector de tiempo global. Se omiten `SINCE`/`UNTIL` cuando hay un intervalo de selección activo. |
 | **API sin intervalo explícito** | `SINCE`/`UNTIL` en la consulta, valor predeterminado de la última hora. |
 
-> **Nota**
+>[!NOTE]
 >
 > Dado que el selector gana en los paneles y en Explorar, esta guía generalmente excluye a `SINCE` de las consultas de panel. Siempre se debe definir un selector de tiempo para las consultas.
