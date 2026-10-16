@@ -1,7 +1,7 @@
 ---
 title: Documentación de consultas y tableros
 description: Documentación de referencia para consultas SQL y paneles de Observability Insights.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '10254'
 ht-degree: 4%
@@ -2957,7 +2957,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](#53-curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
+**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
 
 Consulta `netRx`:
 
@@ -3245,7 +3245,7 @@ Fórmula:
 limit - used
 ```
 
-**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](#53-curated-metric-entities))
+**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities))
 
 Consulta `rx`:
 
@@ -3430,7 +3430,7 @@ Los mensajes de error aparecen en el editor cuando **Valida** o **Ejecuta** una 
 | `FACET and TIMESERIES require an aggregate query` | Consulta de eventos con FACET/TIMESERIES | Utilice un acumulado. |
 | `FACET supports at most five attributes` | > 5 facetas | Reducir. |
 | `average requires a numeric attribute` | e.g. `average(service)` | Use `uniqueCount`/`latest` o un atributo numérico. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` sin series temporales o en un medidor | Agregar `TIMESERIES AUTO`; usar una entidad de contador ✔ ([Entidades de métricas revisadas](#53-curated-metric-entities)); para indicadores usar `derivative()`. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` sin series temporales o en un medidor | Agregar `TIMESERIES AUTO`; usar una entidad de contador ✔ ([Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities)); para indicadores usar `derivative()`. |
 | `rate cannot be combined with other aggregates` | Varios elementos con `rate()` | Un `rate()` por widget; combinar con una fórmula. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | ELIMINAR SERIES TEMPORALES. |
 | `apdex requires an entity with a status attribute` | `apdex` en una entidad de métrica | Usar `Transaction`/`Span`/`AppRequest`. |
