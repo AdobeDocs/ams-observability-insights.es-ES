@@ -1,28 +1,15 @@
 ---
 title: Modelos de panel
 description: Genere paneles de Observability Insights usando modelos para la supervisión de aplicaciones e infraestructura.
-source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
+source-git-commit: 94e108d029b04bf4f04aec3fb8b949705c4005e1
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1196'
 ht-degree: 1%
 ---
 
 ## Modelos de panel {#dashboard-blueprints}
 
 Cada modelo es un tablero completo y complejo. Enumera el objetivo, el diseño de pestaña y sección, y cada widget con su tipo de gráfico, unidad, umbrales, tamaño y consulta. Los tamaños son `width×height` en la cuadrícula de 12 columnas. Genere cada uno de arriba a abajo y arrástrelos para ajustarlos.
-
-| Modelo | Público | Lo más destacado |
-| ------------------------------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------- |
-| [11.1 Golden Signals / SLO](#111-golden-signals--slo-board) | SRE, de guardia | Mosaicos KPI con umbrales, Apdex, porcentaje de error, saturación |
-| [11.2 Clasificación de errores](#112-error-triage-board) | De guardia | Clases de error, puntos interactivos 5xx, solicitudes fallidas con ID de seguimiento |
-| [Profundización de latencia de 11.3](#113-latency-deep-dive-board) | Ingenieros de rendimiento | Percentiles, bloques de latencia, variabilidad, composición de transacciones, seguimientos más lentos |
-| [11.4 Dependencias descendentes](#114-downstream-dependencies-board) | Propietarios de servicio | HTTP saliente, DB, mensajería, RPC |
-| [11.5 AEM Author / Publish / Dispatcher](#115-aem-author--publish--dispatcher-board) | equipos de AEM | Secciones por nivel, Sling/JSP/JCR, carga de Dispatcher |
-| [11.6 Capacidad de infraestructura](#116-infrastructure-capacity-board) | Plataforma/capacidad | modos CPU, memoria, disco, velocidades de red, fórmulas |
-| [11.7 Estado de JVM](#117-jvm-health-board) | Equipos de Java | % de montón de fórmulas, montón por host y grupo, subprocesos, JVM CPU |
-| [11.8 Executive / NOC wall](#118-executive--noc-wall-board) | NOC, liderazgo | Mosaicos KPI, fórmula de disponibilidad, tráfico por nivel, nota SLO |
-| [11,9 Proporciones y espacio para el encabezado](#119-ratios--headroom-board-formula-showcase) | Todos | Muestra de widget de fórmula |
-| [11.10 Explorador de servicios](#1110-service-explorer-variable-driven) | Cada equipo | Impulsado por variables, reutilizable |
 
 **Leyenda de gráfico:** **N** = Número, **L** = Línea, **A** = Área, **B** = Barra, **P** = Circular, **T** = Tabla.
 
