@@ -1,9 +1,9 @@
 ---
 title: Resolución de problemas
 description: Solucione consultas SQL, gráficos y tableros en Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: c45d62d2af62e6bd0c88e210b31c8954b75533be
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '335'
 ht-degree: 5%
 ---
 
@@ -26,7 +26,7 @@ Los mensajes de error aparecen en el editor cuando **Valida** o **Ejecuta** una 
 | `ORDER BY 'x' must reference a selected value or alias` | Ordenar por algo no seleccionado | Asigne un alias al agregado y ordene por el alias. |
 | `IN requires between 1 and 100 values` | — | Dividir o usar `LIKE`. |
 | `Use IS NULL or IS NOT NULL for null comparisons` | `attr = NULL` | Usar `IS NULL`. |
-| `Unexpected character '{'` | `{{variable}}` en la vista previa del widget Agregar o al guardar | Consulte [Tutorial 3, paso 8.7](#87-make-dashboards-reusable-with-variables) limitación. |
+| `Unexpected character '{'` | `{{variable}}` en la vista previa del widget Agregar o al guardar | Ver [limitación del tutorial 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables). |
 | `Unexpected character ';'` / `'"'` | Punto y coma o comillas dobles | Quitar `;`; usar comillas simples. |
 | `Expected a positive duration such as 30 minutes` | `TIMESERIES 5m` | Escriba `TIMESERIES 5 minutes`. |
 | `Time range cannot exceed 31 days` | Selector > 31 d | Reduzca la ventana. |
@@ -36,7 +36,7 @@ Los mensajes de error aparecen en el editor cuando **Valida** o **Ejecuta** una 
 | `Unknown query name 'x' - must be one of: …` | La fórmula hace referencia a un nombre que falta | Igualar nombres exactamente (distingue mayúsculas de minúsculas). |
 | **Error al guardar** | Una consulta de widget no es válida del lado del servidor (a menudo `{{var}}`) | Abra cada widget editado recientemente y **ejecútelo**; corrija o elimine el no válido. |
 | _Seleccionar un valor para{{x}}_ | La variable no tiene selección | Elija un valor en la barra de variables. |
-| _No hay actividad en los últimos..._ | No hay filas en la ventana | Ampliar la ventana; compruebe los filtros con una consulta de detección ([Detección de datos](#101-data-discovery)). |
+| _No hay actividad en los últimos..._ | No hay filas en la ventana | Ampliar la ventana; compruebe los filtros con una consulta de detección ([Detección de datos](../examples/query-cookbook.md#data-discovery)). |
 | Líneas divididas en puntos | Cubo menor que la cadencia de datos | Use `TIMESERIES AUTO` (≥ 2 min) o un gráfico de barras. |
 | La faceta muestra un grupo de cadenas vacías | Falta atributo en algunas filas | Agregar `WHERE attr != ''`. |
 | _Este panel SQL heredado ya no se ejecuta_ | Panel del antiguo generador de raw-SQL | Edite → vuelva a generar en SQL. |
