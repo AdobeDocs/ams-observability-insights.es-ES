@@ -1,7 +1,7 @@
 ---
 title: Cómo realizar consultas con SQL
 description: Aprenda a escribir y ejecutar consultas SQL en Observability Insights.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Esto cuenta las solicitudes por servicio, lo que le muestra qué servicios está
 
 > **Importante**
 >
-> **Descubrir antes de compilar.** La disponibilidad de los atributos depende de cómo se instrumente cada servicio. Ejecute primero las [consultas de detección](#101-data-discovery) en un nuevo inquilino para ver qué servicios, hosts, atributos y métricas contienen datos.
+> **Descubrir antes de compilar.** La disponibilidad de los atributos depende de cómo se instrumente cada servicio. Ejecute primero las [consultas de detección](../../examples/query-cookbook.md#data-discovery) en un nuevo inquilino para ver qué servicios, hosts, atributos y métricas contienen datos.
 
 ### Ejecución de una consulta
 

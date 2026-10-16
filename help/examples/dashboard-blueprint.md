@@ -1,7 +1,7 @@
 ---
 title: Modelos de panel
 description: Genere paneles de Observability Insights usando modelos para la supervisión de aplicaciones e infraestructura.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 1%
@@ -644,7 +644,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](#53-curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
+**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](../references/data-dictionary.md#curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
 
 Consulta `netRx`:
 
@@ -939,7 +939,7 @@ Fórmula:
 limit - used
 ```
 
-**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](#53-curated-metric-entities))
+**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](../references/data-dictionary.md#curated-metric-entities))
 
 Consulta `rx`:
 

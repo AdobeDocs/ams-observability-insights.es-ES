@@ -1,7 +1,7 @@
 ---
 title: Documentación de consultas y tableros
 description: Documentación de referencia para consultas SQL y paneles de Observability Insights.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '10254'
 ht-degree: 4%
@@ -28,19 +28,19 @@ ht-degree: 4%
 | **Introducción** | [1. Introducción a SQL](#1-get-started-with-SQL-the-language-of-your-telemetry) | Qué es SQL, qué puede consultar, dónde utilizarlo, las reglas básicas |
 |                 | [2. Cómo consultar con SQL](#2-how-to-query-with-SQL-the-mechanics-of-querying) | Cómo explorar datos, cómo se ejecuta una consulta, ejemplos prácticos |
 |                 | [3. Gráficos y tableros](#3-charts-and-dashboards-visualizing-your-data) | Cómo convertir consultas en gráficos y crear paneles paso a paso |
-| **Referencia** | [4. Referencia SQL &#x200B;](#4-SQL-reference) | Cada cláusula, función y operador, con ejemplos |
-|                 | [5. Diccionario de datos &#x200B;](#5-data-dictionary) | Cada entidad y atributo que puede consultar |
+| **Referencia** | [4. Referencia SQL ](#4-SQL-reference) | Cada cláusula, función y operador, con ejemplos |
+|                 | [5. Diccionario de datos ](#5-data-dictionary) | Cada entidad y atributo que puede consultar |
 | **Tutoriales** | [6. Tutorial 1: Sus primeras consultas](#6-tutorial-1-your-first-queries) | `SELECT`, `FROM`, `LIMIT`, agregados, tiempo, `TIMESERIES`, `WHERE`, `FACET` |
 |                 | [7. Tutorial 2: Controlar los datos](#7-tutorial-2-control-your-data) | Valores únicos, más reciente/más antiguo, porcentajes, percentiles, etiquetas, caracteres comodín, orden |
 |                 | [8. Tutorial 3: Avance en el tablero](#8-tutorial-3-advance-your-dashboarding) | Agregados condicionales, Apdex, tasas, histogramas, fórmulas, variables, secciones |
-|                 | [9. Tutorial 4: Funciones avanzadas &#x200B;](#9-tutorial-4-advanced-functions) | `stddev`, `derivative`, clasificado `latest`, porcentaje del total, composición de intervalo, detección de métrica |
+|                 | [9. Tutorial 4: Funciones avanzadas ](#9-tutorial-4-advanced-functions) | `stddev`, `derivative`, clasificado `latest`, porcentaje del total, composición de intervalo, detección de métrica |
 | **Ejemplos** | [10. Consultar libro de cocina](#10-query-cookbook) | Más de 100 consultas listas para usar por tema (incluido AEM) |
 |                 | [11. Modelos de panel](#11-dashboard-blueprints) | Diez paneles completos y complejos con la consulta de cada widget |
 | **Operar** | [12. Rendimiento](#12-performance) | Resúmenes, presupuestos de consultas y cómo mantener los paneles de forma rápida |
 |                 | [13. Solucionando problemas](#13-troubleshooting) | Cada mensaje de error, qué significa y cómo corregirlo |
 |                 | [14. Apéndice](#14-appendix) | Límites, exportar formato de archivo, hoja de trucos de una página |
 
-&#x200B;# Introducción
+# Introducción
 
 ## &#x200B;1. Introducción a SQL: el idioma de la telemetría
 
@@ -505,7 +505,7 @@ Una fórmula combina aritméticamente de 2 a 6 consultas SQL con nombre, por eje
 
 [↑ Volver al inicio](#top)
 
-&#x200B;# Referencia
+# Referencia
 
 ## &#x200B;4. Referencia SQL
 
@@ -1194,7 +1194,7 @@ Cada entidad depurada ajusta una métrica de OpenTelemetry con el filtro correct
 
 [↑ Volver al inicio](#top)
 
-&#x200B;# Tutoriales
+# Tutoriales
 
 ## &#x200B;6. Tutorial 1: Sus primeras consultas
 
@@ -1828,7 +1828,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 [↑ Volver al inicio](#top)
 
-&#x200B;# Ejemplos
+# Ejemplos
 
 ## &#x200B;10. Consultar libro de cocina
 
@@ -2957,7 +2957,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](#53-curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
+**W20 · Total de E/S de red para un host (fórmula)** — Widget de fórmulas, L, `bytes/s`, 12×4. Las fórmulas no pueden `FACET` y `rate()` debe tener un ámbito de un host (consulte [Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities)), por lo que anclar el host: reemplace `web-publish-01` por un nombre de host real de W5.
 
 Consulta `netRx`:
 
@@ -3245,7 +3245,7 @@ Fórmula:
 limit - used
 ```
 
-**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](#53-curated-metric-entities))
+**W5 · Relación de salida/entrada de red para un host** — Fórmula, L (anclar el host; consulte [Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities))
 
 Consulta `rx`:
 
@@ -3385,7 +3385,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 [↑ Volver al inicio](#top)
 
-&#x200B;# Operar
+# Operar
 
 ## &#x200B;12. Rendimiento
 
@@ -3430,7 +3430,7 @@ Los mensajes de error aparecen en el editor cuando **Valida** o **Ejecuta** una 
 | `FACET and TIMESERIES require an aggregate query` | Consulta de eventos con FACET/TIMESERIES | Utilice un acumulado. |
 | `FACET supports at most five attributes` | > 5 facetas | Reducir. |
 | `average requires a numeric attribute` | e.g. `average(service)` | Use `uniqueCount`/`latest` o un atributo numérico. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` sin series temporales o en un medidor | Agregar `TIMESERIES AUTO`; usar una entidad de contador ✔ ([Entidades de métricas revisadas](#53-curated-metric-entities)); para indicadores usar `derivative()`. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` sin series temporales o en un medidor | Agregar `TIMESERIES AUTO`; usar una entidad de contador ✔ ([Entidades de métricas revisadas](data-dictionary.md#curated-metric-entities)); para indicadores usar `derivative()`. |
 | `rate cannot be combined with other aggregates` | Varios elementos con `rate()` | Un `rate()` por widget; combinar con una fórmula. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | ELIMINAR SERIES TEMPORALES. |
 | `apdex requires an entity with a status attribute` | `apdex` en una entidad de métrica | Usar `Transaction`/`Span`/`AppRequest`. |
